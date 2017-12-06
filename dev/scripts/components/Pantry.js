@@ -246,38 +246,38 @@ class Pantry extends React.Component {
                                             <p>Select a type of wine:</p>
                                             <input type="radio" id="red"
                                                 name="type" value="red" onChange={(e) => this.handleChange('filterType', e)}/>
-                                            <label for="red">Red</label>
+                                            <label htmlFor="red">Red</label>
 
                                             <input type="radio" id="white"
                                                 name="type" value="white" onChange={(e) => this.handleChange('filterType', e)}/>
-                                            <label for="white">White</label>
+                                            <label htmlFor="white">White</label>
 
                                             <input type="radio" id="rose"
                                                 name="type" value="rose" onChange={(e) => this.handleChange('filterType', e)}/>
-                                            <label for="rose">Rose</label>
+                                            <label htmlFor="rose">Rose</label>
                                         </div>
 
                                         <div className="filter_sugarContent clearfix">
                                             <p>Select your preferred sugar content:</p>
                                             <input type="radio" id="extraDry"
                                                 name="sugar" value="XD" onChange={(e) => this.handleChange('filterSugar', e)}/>
-                                            <label for="extraDry">Extra dry</label>
+                                            <label htmlFor="extraDry">Extra dry</label>
 
                                             <input type="radio" id="dry"
                                                 name="sugar" value="D" onChange={(e) => this.handleChange('filterSugar', e)}/>
-                                            <label for="dry">Dry</label>
+                                            <label htmlFor="dry">Dry</label>
 
                                             <input type="radio" id="medium"
                                                 name="sugar" value="M" onChange={(e) => this.handleChange('filterSugar', e)}/>
-                                            <label for="medium">Medium</label>
+                                            <label htmlFor="medium">Medium</label>
 
                                             <input type="radio" id="mediumSweet"
                                                 name="sugar" value="MS" onChange={(e) => this.handleChange('filterSugar', e)} />
-                                            <label for="mediumSweet">Medium Sweet</label>
+                                            <label htmlFor="mediumSweet">Medium Sweet</label>
 
                                             <input type="radio" id="sweet"
                                                 name="sugar" value="S" onChange={(e) => this.handleChange('filterSugar', e)}/>
-                                            <label for="sweet">Sweet</label>
+                                            <label htmlFor="sweet">Sweet</label>
                                         </div>
 
                                     </form>
@@ -365,6 +365,7 @@ class Pantry extends React.Component {
                                 value={this.state.currentRating}
                                     selected={this.state.currentRating}
                                     onChange={(e) => this.handleChange('currentRating', e)}>
+                                        <option selected='true' disabled='disabled'  value='0'>No Rating</option>
                                     <option value='5'>5</option>
                                     <option value='4.5'>4.5</option>
                                     <option value='4'>4</option>

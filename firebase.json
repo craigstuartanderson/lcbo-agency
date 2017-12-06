@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
         "hosting": {
             "public": ".",
             "ignore": [
@@ -6,4 +7,20 @@
                 "node_modules/**"
             ]
         }
+=======
+  "hosting": {
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+>>>>>>> 88619c6ccdd618dab8552d8d8ad4015d4987c697
 }

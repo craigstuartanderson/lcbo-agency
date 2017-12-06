@@ -3,6 +3,7 @@ import Results from './Results';
 import Search from './Search';
 import axios from 'axios';
 import scrollToComponent from 'react-scroll-to-component';
+import Qs from 'qs';
 
 export default class MarketPlace extends React.Component {
     constructor() {
@@ -34,16 +35,31 @@ export default class MarketPlace extends React.Component {
 
     makeDataCall(keywords) {
         console.log(`Called with the keyword ${keywords}`)
-        const access_key = 'MDo5ODRjMDU2Ni1kNTBhLTExZTctYjFmYS1lN2UwOGZlNzE3OWY6WFJBVXV1Q2FkWDdBUkQ5aUtxc0ZYejl3ZTVCaDU0emFYRG56';
-        axios.get(`https://lcboapi.com/products?`, {
-            params: {
-                dataType: 'json',
-                q: keywords,
-                where_not: 'is_dead,is_discontinued',
-                per_page: 100,
-                access_key
-            }
+        // const access_key = 'MDo5ODRjMDU2Ni1kNTBhLTExZTctYjFmYS1lN2UwOGZlNzE3OWY6WFJBVXV1Q2FkWDdBUkQ5aUtxc0ZYejl3ZTVCaDU0emFYRG56';
+        const access_key = 'MDoyNTYwZDMxZS1kYTkyLTExZTctODNhNS1kM2MzMDg3MjBhYzY6TDN0SDNNZ05nNGxtdnlXQ2Z1MFU3cFlIWUZHSVRyQTlzVHlo';
+            axios({
+                url: `https://proxy.hackeryou.com`,
+                dataResponse: 'json',
+                method: 'get',
+                paramsSerializer: function (params) {
+                    return Qs.stringify(params, { arrayFormat: 'brackets' })
+                },
+                params: {
+                    reqUrl: `https://lcboapi.com/products?`,
+                    // method: 'GET',
+                    params: {
+                        dataType: 'json',
+                        method: 'GET',
+                        q: keywords,
+                        where_not: 'is_dead,is_discontinued',
+                        per_page: 100,
+                        access_key
+                    }, 
+                    xmlToJSON: false,
+                    useCache: false
+                }
         }).then((res) => {
+            console.log('result ',res);
             console.log('result from API ',res.data.result);
             console.log('result' , res);
             this.setState({
