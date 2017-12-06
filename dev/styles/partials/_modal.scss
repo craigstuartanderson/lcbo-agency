@@ -80,6 +80,12 @@
         @include tablet{
             width: 80%;
         }
+        @include mobile{
+            width: 80%;
+        }
+        @include mobile-xsml{
+            width: 80%;
+        }
 }
 .textField{
     float:left;
