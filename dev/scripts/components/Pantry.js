@@ -336,7 +336,7 @@ class Pantry extends React.Component {
                                         <h6>{wine.userNotes}</h6>
                                     </div>
                                 </div>
-                                <div className="pantryButtons">
+                                <div className="pantryButtons clearfix">
                                     <button className="deleteBtn" onClick={() => this.deleteWine(wine.id)}>Delete</button>
                                     <button className="editBtn"  onClick={() => this.editWine(wine)}>Edit</button>
                                 </div>
