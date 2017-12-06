@@ -122,7 +122,7 @@
     font-size: 0.8rem;
     margin: 0;
     padding: 20px 0;
-    @include mobile-xsml-width {
+    @include mobile-xsml{
         height: 40px;
     }
 }
